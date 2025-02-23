@@ -25,8 +25,7 @@ def captar_dados():
 
         tempo_ativo_cpu = math.trunc(psutil.cpu_times(percpu = False).user / 60)
 
-        temperatura_cpu = psutil.sensors_temperatures(fahrenheit=False)['coretemp'][0].current
-
+        # temperatura_cpu = psutil.sensors_temperatures(fahrenheit=False)['coretemp'][0].current
 
         # Conteúdos RAM
         porcentagem_uso_ram = psutil.virtual_memory().percent
