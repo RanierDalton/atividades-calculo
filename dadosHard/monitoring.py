@@ -109,7 +109,6 @@ class Monitoracao(ctk.CTk):
         colunas = ''
         valores = ''
 
-        print('Armazenando dados...')
         for dado in dados:
             for i, valor in enumerate(dado):
                 is_ultima = i == len(dado) - 1
@@ -117,7 +116,7 @@ class Monitoracao(ctk.CTk):
                 valores += f'{valor['dado']}{',' if not is_ultima else ''}'
         
         # TODO executor = self._conexao_db.cursor()  
-        query = f'INSERT INTO dados.informacoes({colunas}) VALUES ({valores});'
+        query = f'INSERT INTO dados.informacoes(fkPlc,{colunas}) VALUES ({self._id_plc}, {valores});'
 
         print(query)
         # executor.execute(query)
@@ -251,5 +250,3 @@ class Monitoracao(ctk.CTk):
 if __name__ == '__main__':
     app = Monitoracao()
     app.mainloop()
-
-
