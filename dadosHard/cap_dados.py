@@ -18,7 +18,7 @@ def armazenar_dados(minutos_parados, porcentagem_cpu):
     banco.commit()
     executor.close()
 
-def captar_dados():
+def captar_dados():    
     while True:
         # Conteúdos cpu 
         porcentagem_uso_cpu = psutil.cpu_percent(interval = None, percpu = False)
